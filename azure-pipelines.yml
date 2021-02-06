@@ -8,10 +8,24 @@ trigger:
 
 pool:
   vmImage: 'ubuntu-latest'
+  
+variables:
+  azureSubscriptionEndpoint: f8e5970e-2194-4a75-915e-e1c9af89726f
+  azureContainerRegistry: chrisimages.azurecr.io
+  kubernetesCluster: chriscluster
+  azureResourceGroup: ruthandchris
+
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: HelmDeploy@0
+  displayName: Helm install
+  inputs:
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureResourceGroup: $(azureResourceGroup)
+    kubernetesCluster: $(kubernetesCluster)
+    command: install my-solr --set replicaCount=4,service.type=LoadBalancer
+    chartType: FilePath
+    chartPath: helm/my-solr
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.

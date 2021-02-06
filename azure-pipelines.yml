@@ -10,7 +10,7 @@ pool:
   vmImage: 'ubuntu-latest'
   
 variables:
-  azureSubscriptionEndpoint: f8e5970e-2194-4a75-915e-e1c9af89726f
+  azureSubscriptionEndpoint: chrisimages
   azureContainerRegistry: chrisimages.azurecr.io
   kubernetesCluster: chriscluster
   azureResourceGroup: ruthandchris

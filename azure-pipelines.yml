@@ -24,8 +24,8 @@ steps:
     azureResourceGroup: $(azureResourceGroup)
     kubernetesCluster: $(kubernetesCluster)
     command: install
-    chartType: FilePath
-    chartPath: helm/my-solr
+    chartType: Name
+    chartPath: my-solr
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.

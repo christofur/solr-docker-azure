@@ -23,7 +23,7 @@ steps:
     azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
     azureResourceGroup: $(azureResourceGroup)
     kubernetesCluster: $(kubernetesCluster)
-    command: install my-solr --set replicaCount=4,service.type=LoadBalancer
+    command: install
     chartType: FilePath
     chartPath: helm/my-solr
 

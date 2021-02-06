@@ -25,7 +25,7 @@ steps:
     kubernetesCluster: $(kubernetesCluster)
     command: install
     chartType: Name
-    chartPath: my-solr
+    chartName: helm/my-solr
 
 - script: |
     echo Add other tasks to build, test, and deploy your project.
